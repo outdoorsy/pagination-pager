@@ -18,7 +18,7 @@
     {{/each}}
 
     <li class="next {{if isLastDisabled 'disabled'}}">
-      <a href="{{nextUrl}}" {{action 'next'}}>{{{paginationNext}}}</a>
+      <a href="{{nextUrl}}" {{action 'next'}}>{{svg-jar "arrow-right"}}</a>
     </li>
   {{else}}
     {{#if pagerFirst}}
@@ -28,7 +28,7 @@
     {{/if}}
 
     <li class="{{if pagerSpread 'previous'}} {{if isFirstDisabled 'disabled'}}">
-      <a href="{{previousUrl}}" {{action 'previous'}}>{{{pagerPrevious}}}</a>
+      <a href="{{previousUrl}}" {{action 'previous'}}>{{svg-jar "arrow-left"}}</a>
     </li>
 
     {{#if hasBlock}}
