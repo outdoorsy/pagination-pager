@@ -18,7 +18,7 @@
     {{/each}}
 
     <li class="next {{if isLastDisabled 'disabled'}}">
-      <a href="{{nextUrl}}" {{action 'next'}}>{{svg-jar "arrow-right"}}</a>
+      <a href="{{nextUrl}}" {{action 'next'}}><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.616 19a.631.631 0 0 1-.436-.17.561.561 0 0 1 0-.826L14.514 12 8.18 5.996a.561.561 0 0 1 0-.825.639.639 0 0 1 .87 0l6.77 6.417c.24.228.24.596 0 .824L9.05 18.83a.631.631 0 0 1-.434.171" fill-rule="nonzero" fill="#4A4A4A"></path></svg></a>
     </li>
   {{else}}
     {{#if pagerFirst}}
@@ -28,7 +28,7 @@
     {{/if}}
 
     <li class="{{if pagerSpread 'previous'}} {{if isFirstDisabled 'disabled'}}">
-      <a href="{{previousUrl}}" {{action 'previous'}}>{{svg-jar "arrow-left"}}</a>
+      <a href="{{previousUrl}}" {{action 'previous'}}><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.384 19a.631.631 0 0 0 .436-.17.561.561 0 0 0 0-.826L9.486 12l6.334-6.004a.561.561 0 0 0 0-.825.639.639 0 0 0-.87 0l-6.77 6.417a.561.561 0 0 0 0 .824l6.77 6.417c.12.114.277.171.434.171" fill-rule="nonzero" fill="#4A4A4A"></path></svg></a>
     </li>
 
     {{#if hasBlock}}
