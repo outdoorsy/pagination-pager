@@ -1,7 +1,7 @@
 <ul class="pagination">
   {{#unless pager}}
     <li class="previous {{if isFirstDisabled 'disabled'}}">
-      <a href="{{previousUrl}}" {{action 'previous'}}>{{{paginationPrevious}}}</a>
+      <a href="{{previousUrl}}" {{action 'previous'}}><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.384 19a.631.631 0 0 0 .436-.17.561.561 0 0 0 0-.826L9.486 12l6.334-6.004a.561.561 0 0 0 0-.825.639.639 0 0 0-.87 0l-6.77 6.417a.561.561 0 0 0 0 .824l6.77 6.417c.12.114.277.171.434.171" fill-rule="nonzero" fill="#4A4A4A"></path></svg></a>
     </li>
 
     {{#each pages key="@index" as |page|}}
@@ -28,7 +28,7 @@
     {{/if}}
 
     <li class="{{if pagerSpread 'previous'}} {{if isFirstDisabled 'disabled'}}">
-      <a href="{{previousUrl}}" {{action 'previous'}}><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.384 19a.631.631 0 0 0 .436-.17.561.561 0 0 0 0-.826L9.486 12l6.334-6.004a.561.561 0 0 0 0-.825.639.639 0 0 0-.87 0l-6.77 6.417a.561.561 0 0 0 0 .824l6.77 6.417c.12.114.277.171.434.171" fill-rule="nonzero" fill="#4A4A4A"></path></svg></a>
+      <a href="{{previousUrl}}" {{action 'previous'}}>{{{pagerPrevious}}}</a>
     </li>
 
     {{#if hasBlock}}
