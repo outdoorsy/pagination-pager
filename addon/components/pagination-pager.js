@@ -1,8 +1,12 @@
-import { alias, or } from '@ember/object/computed';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string';
+import { alias, or } from '@ember/object/computed';
+import layout from '../templates/components/pagination-pager';
 
 export default Component.extend({
+  layout,
+
   tagName: 'nav',
   classNameBindings: ['pager:pager', 'isHidden:hidden', 'paginationSizeClass'],
   attributeBindings: ['ariaLabel'],
@@ -21,6 +25,14 @@ export default Component.extend({
   current: 1,
   urlTemplate: '#',
   lastPage: alias('count'),
+
+  pagerNextText: computed('pagerNext', function(){
+    return htmlSafe(this.get('pagerNext'));
+  }),
+
+  pagerPreviousText: computed('pagerPrevious', function(){
+    return htmlSafe(this.get('pagerPrevious'));
+  }),
 
   previousUrl: computed('urlTemplate', 'current', 'firstPage', function () {
     let urlTemplate = this.get('urlTemplate');

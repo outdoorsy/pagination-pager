@@ -1,6 +1,6 @@
 {
-  "name": "pagination-pager",
-  "version": "3.0.0",
+  "name": "@outdoorsyco/pagination-pager",
+  "version": "4.0.0",
   "bugs": {
     "url": "https://github.com/knownasilya/pagination-pager/issues"
   },
@@ -61,6 +61,7 @@
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.4.0",
     "ember-source-channel-url": "^1.1.0",
+    "ember-svg-jar": "^1.2.2",
     "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-node": "^7.0.1",
     "loader.js": "^4.7.0",
