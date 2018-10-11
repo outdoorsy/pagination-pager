@@ -7,9 +7,8 @@ pagination-pager
 
 Ember Component for Bootstrap 3 Pagination &amp; Pager components
 
-```hbs
-{{pagination-pager current=2 count=10}}
-```
+* `git clone` this repository
+* `npm install`
 
 Here's a [demo][1], and these are the original Bootstrap Components: [Pagination][2] and [Pager][3].
 
