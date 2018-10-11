@@ -1,16 +1,15 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
-var computed = Ember.computed;
-
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'li',
   classNameBindings: ['isActive:active', 'disabled'],
   seperator: '…',
   selected: null,
 
   url: computed('urlTemplate', 'page', function () {
-    var urlTemplate = this.get('urlTemplate');
-    var current = this.get('page');
+    let urlTemplate = this.get('urlTemplate');
+    let current = this.get('page');
 
     urlTemplate = urlTemplate.replace('{current}', current);
 
@@ -26,8 +25,8 @@ export default Ember.Component.extend({
   }),
 
   isDots: computed('page', function () {
-    var seperator = this.get('seperator');
-    var page = this.get('page');
+    let seperator = this.get('seperator');
+    let page = this.get('page');
 
     return page === seperator;
   }),
@@ -38,11 +37,11 @@ export default Ember.Component.extend({
         return;
       }
 
-      var last = this.get('selected');
-      var page = this.get('page');
+      let last = this.get('selected');
+      let page = this.get('page');
 
       if (page !== last) {
-        this.sendAction('pageSet', page, last);
+        this.sendAction('pageSet', page, last); // eslint-disable-line ember/closure-actions
       }
     }
   }

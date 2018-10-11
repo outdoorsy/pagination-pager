@@ -1,50 +1,48 @@
-import {
-  moduleForComponent,
-  test
-} from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupTest } from 'ember-qunit';
 
-moduleForComponent('pagination-pager', 'PaginationPagerComponent', {
-  needs: ['component:page-item']
+module('PaginationPagerComponent', function(hooks) {
+  setupTest(hooks);
+
+  test('it renders', function(assert) {
+    assert.expect(2);
+
+    // creates the component instance
+    let component = this.owner.factoryFor('component:pagination-pager').create();
+    assert.equal(component._state, 'preRender');
+
+    // appends the component to the page
+    this.append();
+    assert.equal(component._state, 'inDOM');
+  });
 });
 
-test('it renders', function() {
-  expect(2);
+module('PaginationPagerComponent - autoHide', function(hooks) {
+  setupTest(hooks);
 
-  // creates the component instance
-  var component = this.subject();
-  equal(component._state, 'preRender');
+  function autoHideSetup(autoHide, count) {
+    let component = this.subject();
+    component.set('autoHide', autoHide);
+    component.set('count', count);
+    this.append();
+    return component;
+  }
 
-  // appends the component to the page
-  this.append();
-  equal(component._state, 'inDOM');
-});
+  test('when set to false and count is 1 it sets isHidden to false', function(assert) {
+    let component = autoHideSetup.call(this, false, 1);
 
-moduleForComponent('pagination-pager', 'PaginationPagerComponent - autoHide', {
-  needs: ['component:page-item']
-});
+    assert.notOk(component.get('isHidden'));
+  });
 
-function autoHideSetup(autoHide, count) {
-  var component = this.subject();
-  component.set('autoHide', autoHide);
-  component.set('count', count);
-  this.append();
-  return component;
-}
+  test('when set to true and count is 1 it sets isHidden to true', function(assert) {
+    let component = autoHideSetup.call(this, true, 1);
 
-test('when set to false and count is 1 it sets isHidden to false', function(assert) {
-  var component = autoHideSetup.call(this, false, 1);
+    assert.ok(component.get('isHidden'));
+  });
 
-  assert.notOk(component.get('isHidden'));
-});
+  test('when set to true and count is 2 it sets isHidden to false', function(assert) {
+    let component = autoHideSetup.call(this, true, 2);
 
-test('when set to true and count is 1 it sets isHidden to true', function(assert) {
-  var component = autoHideSetup.call(this, true, 1);
-
-  assert.ok(component.get('isHidden'));
-});
-
-test('when set to true and count is 2 it sets isHidden to false', function(assert) {
-  var component = autoHideSetup.call(this, true, 2);
-
-  assert.notOk(component.get('isHidden'));
+    assert.notOk(component.get('isHidden'));
+  });
 });
