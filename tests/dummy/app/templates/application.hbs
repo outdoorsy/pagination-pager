@@ -15,169 +15,302 @@
   {{outlet}}
 
   <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=2 pager=true pagerNext='New' pagerPrevious='Old'}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=2
-    pager=true
-    pagerNext='New'
-    pagerPrevious='Old'&#125;&#125;</pre>
+    <div class="rendered">
+      {{pagination-pager
+        count=5
+        current=2
+        pager=true
+        pagerNext="New"
+        pagerPrevious="Old"
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=5
+      current=2
+      pager=true
+      pagerNext="New"
+      pagerPrevious="Old"&#125;&#125;
+    </pre>
   </div>
 
   <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=1 pager=true pagerSpread=true}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=1
-    pager=true
-    pagerSpread=true&#125;&#125;</pre>
+    <div class="rendered">
+      {{pagination-pager
+        count=5
+        current=1
+        pager=true
+        pagerSpread=true
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=5
+      current=1
+      pager=true
+      pagerSpread=true&#125;&#125;
+    </pre>
   </div>
 
   <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=2}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=2&#125;&#125;</pre>
+    <div class="rendered">
+      {{pagination-pager
+        count=5
+        current=2
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=5
+      current=2&#125;&#125;
+    </pre>
   </div>
 
   <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=1}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=1&#125;&#125;</pre>
+    <div class="rendered">
+      {{pagination-pager
+        count=5
+        current=1
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=5
+      current=1&#125;&#125;
+    </pre>
   </div>
 
   <div class="example">
     <div class="rendered">
       <div class="form-group">
         <label>Count</label>
-        {{input type='number' value=autoCount class='form-control' placeholder='Count'}}
+        {{input type="number" value=autoCount class="form-control" placeholder="Count"}}
       </div>
       <div class="form-group">
         <label>
-          {{input type='checkbox' checked=hidden}}
+          {{input type="checkbox" checked=hidden}}
           Hide
         </label>
       </div>
       <div class="form-group">
         <label>
-          {{input type='checkbox' checked=autoHide}}
+          {{input type="checkbox" checked=autoHide}}
           Auto Hide
         </label>
       </div>
-      {{pagination-pager count=autoCount current=1 autoHide=autoHide hide=hidden}}
+      {{pagination-pager
+        count=autoCount
+        current=1
+        autoHide=autoHide
+        hide=hidden
+      }}
     </div>
-    <pre>&#123;&#123;pagination-pager
-    count=autoCount
-    current=1
-    hide=hidden
-    autoHide=autoHide&#125;&#125;</pre>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=autoCount
+      current=1
+      hide=hidden
+      autoHide=autoHide&#125;&#125;
+    </pre>
   </div>
 
   <div class="example">
     <div class="rendered">
       <div class="form-group">
         <label>Count</label>
-        {{input type='number' value=dynamicCount class='form-control' placeholder='Count'}}
+        {{input
+          type="number"
+          value=dynamicCount
+          class="form-control"
+          placeholder="Count"
+        }}
       </div>
       <div class="form-group">
         <label>Current</label>
-        {{input type='number' value=dynamicCurrent class='form-control' placeholder='Current'}}
+        {{input
+          type="number"
+          value=dynamicCurrent
+          class="form-control"
+          placeholder="Current"
+        }}
       </div>
 
-      {{pagination-pager count=dynamicCount current=dynamicCurrent}}
+      {{pagination-pager
+        count=dynamicCount
+        current=dynamicCurrent
+      }}
     </div>
-    <pre>&#123;&#123;pagination-pager
-    count=dynamicCount
-    current=dynamicCurrent&#125;&#125;</pre>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=dynamicCount
+      current=dynamicCurrent&#125;&#125;
+    </pre>
   </div>
 
   <div class="example">
-    <div class="rendered">{{pagination-pager count=50 current=1 change='pageChanged' urlTemplate='localhost:4200/pagination-pager/?page={current}'}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=50
-    current=1
-    change='pageChanged'
-    urlTemplate='localhost:4200/pagination-pager/?page={current}'&#125;&#125;</pre>
+    <div class="rendered">
+      {{pagination-pager
+        count=50
+        current=1
+        change="pageChanged"
+        urlTemplate="localhost:4200/pagination-pager/?page={current}"
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=50
+      current=1
+      change='pageChanged'
+      urlTemplate='localhost:4200/pagination-pager/?page={current}'&#125;&#125;
+    </pre>
   </div>
 
   <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=5 size='lg'}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=5
-    size='lg'&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=5 size='lg' paginationNext='next' paginationPrevious='previous'}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=5
-    size='lg'
-    paginationNext='next'
-    paginationPrevious='previous'&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{pagination-pager count=1 current=1}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=1
-    current=1&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{pagination-pager count=1 current=1 hide=true}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=1
-    current=1
-    hide=true&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=2 disabled=true}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=2
-    change='pageChanged'
-    disabled=true&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{pagination-pager count=1 current=1 pager=true hide=true}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=1
-    current=1
-    pager=true
-    hide=true&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{pagination-pager count=5 current=2 pager=true disabled=true}}</div>
-    <pre>&#123;&#123;pagination-pager
-    count=5
-    current=2
-    pager=true
-    disabled=true&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{#pagination-pager count=5 current=current pager=true}} Page {{current}} of 5 {{/pagination-pager}}</div>
-    <pre>&#123;&#123;#pagination-pager count=5 current=2 pager=true&#125;&#125;
-    Page &#123;&#123;current&#125;&#125; of 5
-&#123;&#123;/pagination-pager&#125;&#125;</pre>
-  </div>
-
-  <div class="example">
-    <div class="rendered">{{#pagination-pager
+    <div class="rendered">{{pagination-pager count=5 current=5 size="lg"}}</div>
+    <pre>
+      &#123;&#123;pagination-pager
       count=5
-      current=current
+      current=5
+      size='lg'&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{pagination-pager
+        count=5
+        current=5
+        size="lg"
+        paginationNext="next"
+        paginationPrevious="previous"
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=5
+      current=5
+      size='lg'
+      paginationNext='next'
+      paginationPrevious='previous'&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{pagination-pager
+        count=1
+        current=1
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=1
+      current=1&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{pagination-pager
+        count=1
+        current=1
+        hide=true
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=1
+      current=1
+      hide=true&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{pagination-pager
+        count=5
+        current=2
+        disabled=true
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=5
+      current=2
+      change='pageChanged'
+      disabled=true&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{pagination-pager
+        count=1
+        current=1
+        pager=true
+        hide=true
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=1
+      current=1
       pager=true
-      pagerPrevious='<span class="glyphicon glyphicon-play gly-flip-horizontal"></span>'
-      pagerNext='<span class="glyphicon glyphicon-play"></span>'
-      pagerFirst='<span class="glyphicon glyphicon-step-backward"></span>'
-      pagerLast='<span class="glyphicon glyphicon-step-forward"></span>'}} Page {{current}} of 5 {{/pagination-pager}}</div>
-    <pre>&#123;&#123;#pagination-pager
+      hide=true&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{pagination-pager
+        count=5
+        current=2
+        pager=true
+        disabled=true
+      }}
+    </div>
+    <pre>
+      &#123;&#123;pagination-pager
+      count=5
+      current=2
+      pager=true
+      disabled=true&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{#pagination-pager
+        count=5
+        current=current
+        pager=true
+      }}
+        Page {{current}} of 5
+      {{/pagination-pager}}
+    </div>
+    <pre>
+      &#123;&#123;#pagination-pager count=5 current=2 pager=true&#125;&#125;
+      Page &#123;&#123;current&#125;&#125; of 5
+  &#123;&#123;/pagination-pager&#125;&#125;
+    </pre>
+  </div>
+
+  <div class="example">
+    <div class="rendered">
+      {{#pagination-pager
+        count=5
+        current=current
+        pager=true
+        pagerPrevious="<span class='glyphicon glyphicon-play gly-flip-horizontal'></span>"
+        pagerNext="<span class='glyphicon glyphicon-play'></span>"
+        pagerFirst="<span class='glyphicon glyphicon-step-backward'></span>"
+        pagerLast="<span class='glyphicon glyphicon-step-forward'></span>"
+      }}
+        Page {{current}} of 5
+      {{/pagination-pager}}
+    </div>
+    <pre>
+      &#123;&#123;#pagination-pager
       count=5
       current=current
       pager=true
@@ -186,7 +319,7 @@
       pagerFirst='&lt;span class="glyphicon glyphicon-step-backward"&gt;&lt;/span&gt;'
       pagerLast='&lt;span class="glyphicon glyphicon-step-forward"&gt;&lt;/span&gt;'&#125;&#125;
     Page &#123;&#123;current&#125;&#125; of 5
-&#123;&#123;/pagination-pager&#125;&#125;</pre>
+&#123;&#123;/pagination-pager&#125;&#125;
+    </pre>
   </div>
-
 </div>

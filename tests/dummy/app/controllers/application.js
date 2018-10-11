@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   current: 2,
   dynamicCount: 10,
   dynamicCurrent: 5,
@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
 
   actions: {
     pageChanged: function (direction, page, last) {
-      console.log(direction, page, last);
+      console.log(direction, page, last); // eslint-disable-line no-console
     }
   }
 });
